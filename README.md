@@ -9,22 +9,26 @@
 ```
 curl -Lo hysteria https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64 && chmod +x hysteria && mv -f hysteria /usr/local/bin/
 ```                 
+或者下载程序（**linux-arm64**）或 [编译程序](compile_hysteria.md)
 
+```
+curl -Lo hysteria https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-arm64 && chmod +x hysteria && mv -f hysteria /usr/local/bin/
+```    
 2. 下载配置
 
 ```
-curl -Lo /root/hysteria_config.yaml https://raw.githubusercontent.com/chika0801/hysteria-install/main/config_server.yaml
+curl -Lo /root/hysteria_config.yaml https://raw.githubusercontent.com/feodorren/hysteria-install/main/config_server.yaml
 ```
 
 3. 下载systemctl配置
 
 ```
-curl -Lo /etc/systemd/system/hysteria.service https://raw.githubusercontent.com/chika0801/hysteria-install/main/hysteria.service && systemctl daemon-reload
+curl -Lo /etc/systemd/system/hysteria.service https://raw.githubusercontent.com/feodorren/hysteria-install/main/hysteria.service && systemctl daemon-reload
 ```
 
 4. 上传证书和私钥
 
-- 将证书文件改名为 **fullchain.cer**，将私钥文件改名为 **private.key**，将它们上传到 **/root** 目录
+- 将证书文件改名为 **fullchain.pem**，将私钥文件改名为 **privkey.pem**，将它们上传到 **/root/certs** 目录
 
 5. 启动程序
 
