@@ -1,16 +1,16 @@
-listen: :443
+listen: :8443
 
 tls:
-  cert: /root/fullchain.cer
-  key: /root/private.key
+  cert: /root/certs/fullchain.pem
+  key: /root/certs/privkey.pem
 
 bandwidth:
-  up: 100 mbps
-  down: 20 mbps
+  up: 300 mbps
+  down: 30 mbps
 
 auth:
   type: password
-  password: chika
+  password: password0
 
 resolver:
   type: https
