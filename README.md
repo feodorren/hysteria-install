@@ -39,11 +39,28 @@ systemctl enable --now hysteria
 | 项目 | |
 | :--- | :--- |
 | 程序 | **/usr/local/bin/hysteria** |
+| 证书建议位置 | **/root/certs/fullchain.pem** 和 **/root/certs/privkey.pem** |
 | 配置 | **/root/hysteria_config.yaml** |
 | 重启 | `systemctl restart hysteria` |
 | 状态 | `systemctl status hysteria` |
 | 查看日志 | `journalctl -u hysteria -o cat -e` |
 | 实时日志 | `journalctl -u hysteria -o cat -f` |
+
+6. 使用
+
+**Surge 配置**
+```
+Hysteria2 = hysteria2, subdomain.mydomain.com, 8443, password=password0
+```
+
+**Clash Meta 配置**
+```
+  - name: "Hysteria2"
+    type: hysteria2
+    server: subdomain.mydomain.com
+    port: 8443
+    password: password0
+```
 
 ### 卸载
 
