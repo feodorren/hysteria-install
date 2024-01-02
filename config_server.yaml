@@ -6,7 +6,7 @@ tls:
 
 bandwidth:
   up: 300 mbps
-  down: 30 mbps
+  down: 100 mbps
 
 auth:
   type: password
